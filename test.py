@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 detector = MTCNN()
 
 # Load face recognition model
-facenet_model = load_model('/home/jawabreh/Desktop/HumaneX_Project/Face-Recognition/facenet_keras.h5')
+facenet_model = load_model('facenet_keras.h5')
 
 # Load face embeddings
-data = np.load('/home/jawabreh/Desktop/HumaneX_Project/Face-Recognition/Embeddings_Dataset/Embeddings.npz')
+data = np.load('./embeddings/Embeddings.npz')
 trainX, trainy = data['arr_0'], data['arr_1']
 
 # Normalize input vectors
