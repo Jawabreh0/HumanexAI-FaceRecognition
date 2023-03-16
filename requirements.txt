@@ -1,0 +1,9 @@
+Pillow
+matplotlib
+mtcnn
+tensorflow
+scikit-learn
+keras
+keras.models
+simple_image_download
+
