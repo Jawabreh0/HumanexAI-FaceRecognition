@@ -79,10 +79,10 @@ def load_dataset(directory):
     return asarray(X), asarray(y)
 
 # load train dataset
-trainX, trainy = load_dataset('./Data/train/')
+trainX, trainy = load_dataset('./data/train/') # this file is not exist, add you own dataset
 print(trainX.shape, trainy.shape)
 # save arrays to one file in compressed format
-savez_compressed('./FaceDetection_Dataset/Detection.npz', trainX, trainy)
+savez_compressed('./detected_faces/Detection.npz', trainX, trainy)
 
 
 # Face feature extraction using FaceNet
@@ -100,11 +100,11 @@ def get_embedding(model, face_pixels):
 	return yhat[0]
 
 # load the face dataset
-data = load('./FaceDetection_Dataset/Detection.npz')
+data = load('./detected_faces/Detection.npz')
 trainX, trainy  = data['arr_0'], data['arr_1'],
 print('Loaded: ', trainX.shape, trainy.shape, )
 # load the facenet model
-model = load_model('facenet_keras.h5')
+model = load_model('/facenet_keras.h5')
 print('Loaded Model')
 # convert each face in the train set to an embedding
 newTrainX = list()
@@ -114,5 +114,5 @@ for face_pixels in trainX:
 newTrainX = asarray(newTrainX)
 print(newTrainX.shape)
 # save arrays to one file in compressed format
-savez_compressed('./Embeddings_Dataset/Embeddings.npz', newTrainX, trainy)
+savez_compressed('./embeddings/Embeddings.npz', newTrainX, trainy)
 print("\n\n\tFace Feature Extraction Done Successfuly\n\n")
