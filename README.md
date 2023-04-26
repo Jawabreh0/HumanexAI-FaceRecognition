@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 3. Run the face recognition system:
 ```python
-python Test.py
+python identify.py
 ```
 
 ## Contributing
