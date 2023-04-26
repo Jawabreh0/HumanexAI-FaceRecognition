@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 detector = MTCNN()
 
 # Load face recognition model
-facenet_model = load_model('facenet_keras.h5')
+facenet_model = load_model('/home/jawabreh/Desktop/HumaneX/face-recognition/facenet_keras.h5')
 
 # Load face embeddings
-data = np.load('./embeddings/Embeddings.npz')
+data = np.load('/home/jawabreh/Desktop/supervisor-meeting/face-recognition/embeddings/unmasked-embeddings.npz')
 trainX, trainy = data['arr_0'], data['arr_1']
 
 # Normalize input vectors
@@ -87,7 +87,8 @@ def identify_person_with_unknown(image, threshold=0.9):
         return "unknown", None
 
 # Example usage
-image = cv2.imread('/home/jawabreh/Desktop/testSis/ukown4.jpg')
+image = cv2.imread('/home/jawabreh/Desktop/supervisor-meeting /face-recognition/data/val/ahmad/1.jpeg')
+
 person, confidence = identify_person_with_unknown(image)
 if person is None:
     print('No face detected in the input image!')
@@ -100,8 +101,9 @@ elif person == "unknown":
 else:
     # Display the predicted name and confidence probability
     text = f'Predicted: {str(person)} ({confidence:.2f}%)'
+    print(text)
     plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     plt.title(text)
-    plt.axis('off')
+    plt.axis('on')
     plt.show()
 
