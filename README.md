@@ -14,7 +14,7 @@ This project is a face recognition system powered by HumanexAI and coded by Ahma
 * Customizable: The system can be customized to work with different datasets or classifiers, depending on the user's requirements.
 ## HumanexAI Face Recognition System Pipeline
 
-![pipeline](pipeline.png)
+![pipeline-1](pipeline-1.png)
 
 
 ## Use Case
