@@ -37,7 +37,7 @@ This project is a face recognition system powered by HumanexAI and coded by Ahma
 ## Installation
 1. Clone this repository:
 ```bash
-git clone https://github.com/username/repo-name.git
+git clone https://github.com/Jawabreh0/HumanexAI_FaceRecognition
 ```
 
 2. Install the required libraries::
